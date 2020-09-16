@@ -19,6 +19,7 @@ const Continents = [
 ];
 
 const UploadProductPage = (props) => {
+  console.log(props);
   // State-Hook
   const [Title, setTitle] = useState("");
   const [Description, setDescription] = useState("");
@@ -52,7 +53,7 @@ const UploadProductPage = (props) => {
     }
     const body = {
       // 로그인된 사람의 id
-      writer: props.user.userData_id,
+      writer: props.user.userData._id,
       title: Title,
       description: Description,
       price: Price,

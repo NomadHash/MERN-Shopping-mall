@@ -24,7 +24,6 @@ function FileUpload(props) {
       }
     );
   };
-
   // function-area
   const deleteHandler = (image) => {
     const currentIndex = Images.indexOf(image);

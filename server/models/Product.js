@@ -11,7 +11,7 @@ const productSchema = mongoose.Schema(
       type: String,
       maxlength: 50,
     },
-    descriptiob: {
+    description: {
       type: String,
     },
     price: {
@@ -21,6 +21,10 @@ const productSchema = mongoose.Schema(
     images: {
       type: Array,
       default: [],
+    },
+    continents: {
+      type: Number,
+      default: 1,
     },
     sold: {
       type: Number,
