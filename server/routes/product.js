@@ -42,7 +42,7 @@ router.post("/", (req, res) => {
   //받아온 정보들을 저장.
   const product = new Product(req.body);
   product.save((err) => {
-    if (err) return res.status(400).json({ success: false, err });
+    if (err) return res.status(400).json({ success: false, err: err });
     return res.status(200).json({ success: true });
   });
 });

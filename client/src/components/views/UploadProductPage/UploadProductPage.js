@@ -19,7 +19,6 @@ const Continents = [
 ];
 
 const UploadProductPage = (props) => {
-  console.log(props);
   // State-Hook
   const [Title, setTitle] = useState("");
   const [Description, setDescription] = useState("");
@@ -44,7 +43,6 @@ const UploadProductPage = (props) => {
   const updataImages = (newImages) => {
     console.log(newImages);
     setImages(newImages);
-    console.log(Images);
   };
   const submitHandler = (event) => {
     event.preventDefault();

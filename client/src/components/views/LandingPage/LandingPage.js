@@ -3,6 +3,8 @@ import { FaCode } from "react-icons/fa";
 import axios from "axios";
 import { Icon, Col, Card, Row } from "antd";
 
+import ImageSlide from "../../utils/ImageSlide";
+
 const { Meta } = Card;
 
 function LandingPage() {
@@ -21,15 +23,11 @@ function LandingPage() {
 
   const renderCards = Products.map((product, index) => {
     return (
-      //   <Col lg={6} md={8} xs={24}>
-      <Card
-        key={index}
-        hoverable={true}
-        cover={<img src={`http://localhost:5000/${product.images[0]}`} />}
-      >
-        <Meta title={product.title} description={`$${product.price}`} />
-      </Card>
-      //   </Col>
+      <Col lg={6} md={8} xs={24} key={index}>
+        <Card cover={<ImageSlide images={product.images} />}>
+          <Meta title={product.title} description={`$${product.price}`} />
+        </Card>
+      </Col>
     );
   });
   return (
@@ -40,7 +38,7 @@ function LandingPage() {
         </h2>
       </div>
 
-      {renderCards}
+      <Row gutter={[16, 16]}>{renderCards}</Row>
 
       <div style={{ display: "flex", justifyContent: "center" }}>
         <button>더보기</button>
